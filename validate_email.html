@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<body>
+    <h1>Email Validation</h1>
+    <form method="post" action="/validate_email">
+        <label for="email">Email:</label>
+        <input type="text" name="email" required>
+        <br>
+        <br>
+        <button type="submit">Validate</button>
+    </form>
+    {%if is_valid is defined %}
+    <h2>{{ email }} is {% if is_valid %} {% else %}invalid{% endif %}!</h2>
+    {% endif %}
+</body>
+</html>

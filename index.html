@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Regex Matcher</h1>
+    <form method="post", action="/">
+        <label for="test_string">Test String:</label>
+        <input type="text" name="test_string" required>
+        <br>
+        <br>
+        <label for="regex_pattern">Regex Pattern:</label>
+        <input type="text" name="regex_pattern" required>
+        <br>
+        <br>
+        <button type="submit">Match</button>
+    </form>
+    {% if matched_strings %}
+        <h2>Matches:</h2>
+        <ul>
+            {% for match in matched_strings %}
+            <li>{{match}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
